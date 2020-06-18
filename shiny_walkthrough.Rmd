@@ -1,0 +1,20 @@
+---
+title: "Shiny Walkthrough"
+output: html_notebook
+---
+
+
+##Shiny
+
+Shiny dashboard structure (UI - user interface)
+
+3 Main parts:
+
+* Header - dashboardHeader()
+* Sidebar - dashboardSidebar()
+* Body - dashboardBody()
+
+
+
+
+
