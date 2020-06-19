@@ -15,7 +15,6 @@ Shiny dashboard structure (UI - user interface)
 * Body - dashboardBody()
 
 
-
 ## How to build a Sidebar Dashboard
 
 sidebar <- dashboardSidebar(
@@ -84,7 +83,6 @@ server <- function(input, output) {
 shinyApp(ui, server)
 
 ```
-
 
 
 
