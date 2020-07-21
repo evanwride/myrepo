@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "Market Simulation Demo"
 output: html_notebook
 ---
 
@@ -9,7 +9,6 @@ library(shinydashboard)
 library(tidyverse)
 ```
 ```{r}
-market_sim <- here::here(read_csv("Market Simulator Version 01.xlsx"))
 
 fluidPage(
   sidebarLayout(
@@ -24,7 +23,79 @@ fluidPage(
         inputId = "intnews",
         label = "Follow International News: Always to Never",
         choices = c(1, 2, 3)
+      ),
+      selectInput(
+        inputId = "medium",
+        label = "Medium to follow news (Select all that apply)",
+        choices = c("TV", "Print", "Online", "Social Media", "Radio", "Email Newsletters", "News App"),
+        multiple = TRUE
+      ),
+      selectInput(
+        inputId = "follow_public_affairs",
+        label = "Follow government and public affairs: Most of the time to hardly at all (1 to 4))",
+        choices = c(1, 2, 3, 4)
+      ),
+      selectInput(
+        inputId = "developing_country",
+        label = "Traveled to a developing country?",
+        choices = c("Yes", "No")
+      ),
+      selectInput(
+        inputId = "political",
+        label = "Liberal to Conservative (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "trust",
+        label = "Trust in political institutions: 'None' to 'Complete' (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "charitable",
+        label = "People should be more charitable: Agree to Disagree (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "religious",
+        label = "Religious and worship service attendance: Multiple times a week to Never (1 to 6)",
+        choices = c(1, 2, 3, 4, 5, 6)
+      ),
+      selectInput(
+        inputId = "religious_importance",
+        label = "Importance of religion: Extremely to Not at all (1 to 5)",
+        choices = c(1, 2, 3, 4, 5)
+      ),
+      selectInput(
+        inputId = "religion",
+        label = "Religion",
+        choices = c("Protestant", "Christian Orthodox", "Jewish", "Muslim", "Sikh", "Hindu", "Buddhist", "Atheist", "Other")
+      ),
+      selectInput(
+        inputId = "importance_trust",
+        label = "Importance of trusting charities: Not at all to Essential (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "trust_charities",
+        label = "Trust in Charities: None to complete (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "donation_frequency",
+        label = "Donation Frequency: Weekly to Never (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "donation_last_year",
+        label = "Donations last year: $1-$49 to $10,000 or more (1 to 7)",
+        choices = c(1, 2, 3, 4, 5, 6, 7)
+      ),
+      selectInput(
+        inputId = "volunteer",
+        label = "Vounteered in the past 12 months",
+        choices = c("Yes", "No")
       )
+      
     ),
     mainPanel()
   )
