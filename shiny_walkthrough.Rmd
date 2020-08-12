@@ -86,4 +86,36 @@ shinyApp(ui, server)
 
 
 
+```{r}
+ui <- fluidPage(
+  mainPanel(
+    tabsetPanel(
+      tabPanel(
+        title = "Persona 1"
+      ),
+      tabsetPanel(
+        tabPanel(
+          title = "Inside Persona 1"
+        ),
+        tabPanel(
+          title = "2 Inside Persona 1"
+        )
+      ),
+      tabPanel(
+        title = "Persona 2"
+      ),
+      tabsetPanel(
+        tabPanel(
+          title = "Inside Persona 2"
+        ),
+        tabPanel("2nd Inside Persona 2")
+      )
+    )
+  )
+)
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
 
